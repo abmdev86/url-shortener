@@ -1,8 +1,9 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import Container from '../Container';
 
 test('renders learn react link', () => {
-  render(<Header />);
+  render(<Container />);
   const linkElement = screen.getByText(/URL Shortner/i);
   expect(linkElement).toBeInTheDocument();
 });
