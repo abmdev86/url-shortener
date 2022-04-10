@@ -1,12 +1,13 @@
 import Header from '../Header/Header.js';
-import URLInputComponent from '../URLComponent/URLInputComponent'
+import URLComponent from '../URLComponent/URLComponent.js';
+
 
 export default function Container(props) {
   return (
 
     < div className='container' >
       <Header />
-      <URLInputComponent/>
+      <URLComponent />
     </div >
   );
 }

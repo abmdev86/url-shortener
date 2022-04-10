@@ -5,38 +5,30 @@ export default class URLInputComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      value: ''
-    };
+
 
     this.handleValueChange = this.handleValueChange.bind(this);
-    this.handleValueSubmit = this.handleValueSubmit.bind(this);
+
 
   }
 
   handleValueChange(event) {
-
-
-    this.setState({ value: event.target.value });
+    //   this.setState({ value: event.target.value });
+    this.props.handleUrlChange(event.target.value);
   }
 
-  handleValueSubmit(event) {
-    alert('converting  ' + this.state.value);
-    event.preventDefault();
 
-  }
 
   render() {
-    const userInput = this.state.value;
+
     return (
-      <form onSubmit={this.handleValueSubmit}>
-        <p>{userInput}</p>
+      <fieldset >
         <label>
           Enter URL:
-          <input type="url" value={userInput} onChange={this.handleValueChange} />
+          <input type="url" onChange={this.handleValueChange} />
         </label>
-        <input type="submit" value="Submit" />
-      </form>
+
+      </fieldset>
     );
   }
 
