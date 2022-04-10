@@ -10,11 +10,26 @@ or
 https://www.yourdomain.com/
 ```
 
-
+# DevLog
+### Hooks vs ComponentDidMount
+## --
+[Hooks are functions that let you “hook into” React features from function components.](https://reactjs.org/docs/hooks-state.html)
+## --
+Used Hook function components to
+- avoid using classes. Short hand way to call api vs componentDidMount, componentDidUpdate, and componentWillUnmount
+- avoid having to duplicate the code between the two lifecycle methods componentDidMount, and componentDidUpdate
+- creates a state variable that does not disapear.
+- state does not have to be an object.
+- this.state and this.setState all in one
+- NO MORE this!
 # Components
 ## Container
 Holds the other components within the app.
 
 ## URLComponent
-![Diagram](./public/urlDiagram.svg)
+Handles users input, makes call to bitly api, displays the shorten url.
 
+class implementation
+![Diagram](./public/urlClassDiagram.svg)
+
+https://extendsclass.com/regex/1e5c02f
