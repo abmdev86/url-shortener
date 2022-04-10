@@ -1,4 +1,5 @@
 import Header from '../Header/Header.js';
+import URLComponent from '../URLComponent/URLComponent.js';
 
 
 export default function Container(props) {
@@ -6,6 +7,7 @@ export default function Container(props) {
 
     < div className='container' >
       <Header />
+      <URLComponent />
     </div >
   );
 }
