@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { LoadingElement, FormElement } from "../Util/GeneralElements";
+import ComponentElements from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
 
 
 export default function URLComponent(props) {
 
-  const [urlValue, setUrlValue] = useState('');
+  const [longUrlValue, setLongUrlValue] = useState('');
+  const [shortUrl, setShortUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -17,31 +18,35 @@ export default function URLComponent(props) {
 
   // urlValue
   useEffect(() => {
-    if (urlValue === '') {
+    if (longUrlValue === '') {
       console.log("url is blank...");
       return;
     }
     //TODO: do something...
     function doSomething() {
 
-      console.log("URLComponent: UseEffect: " + urlValue + " is the urlValue");
-    }
-
-    doSomething();
-    if (isLoading) {
-      console.log("going to  do something...");
-      // reach bitly.
-
+      console.log("URLComponent: UseEffect: " + longUrlValue + " is the urlValue");
+      setShortUrl("testbit.ly");
+      // done with work so not loading.
       setIsLoading(false);
       return;
     }
+
+
+    if (isLoading) {
+      console.log("going to  do something...");
+
+      // reach bitly.
+      doSomething();
+
+    }
     console.log("URLComponent: UseEffect: Didnt hit submit.");
-  }, [urlValue, isLoading]);
+  }, [longUrlValue, isLoading, shortUrl]);
 
   // sets the urlValue state
   function handleChange(event) {
     let stringValue = RegexObject.getValidURL(event.target.value).trim();
-    setUrlValue(stringValue);
+    setLongUrlValue(stringValue);
     event.preventDefault();
   }
 
@@ -56,10 +61,15 @@ export default function URLComponent(props) {
 
   if (isLoading) {
 
-    return <LoadingElement color="red" />;
+    return <ComponentElements.LoadingElement color="red" />;
 
   }
 
-  return <FormElement style={{ color: "green" }} type="text" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />;
+  return (
+    <div>
+      <ComponentElements.FormElement style={{ color: "green" }} type="text" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />
+      <ComponentElements.DisplayElement longUrl={longUrlValue} shortUrl={shortUrl} />
+    </div>
+  );
 
 }
