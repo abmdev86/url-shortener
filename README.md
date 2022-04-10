@@ -32,4 +32,4 @@ Handles users input, makes call to bitly api, displays the shorten url.
 class implementation
 ![Diagram](./public/urlClassDiagram.svg)
 
-7cd5e57bdf8338be3ff371918fb77aefcbdbec27
+https://extendsclass.com/regex/1e5c02f
