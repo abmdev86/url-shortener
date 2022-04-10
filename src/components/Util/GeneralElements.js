@@ -4,28 +4,22 @@
 
 
 export const LoadingElement = (props) => {
-  const style =
-  {
-    color: props.color,
 
-  };
   return (
-    <h2 style={style}>Loading...</h2>
+    <h2 style={props.style}>Loading...</h2>
   );
 };
 
 
 
-export const FormElement = (props) => {
+export const FieldSetElement = (props) => {
   return (
-    <form >
+    <form onSubmit={props.handleSubmit} style={props.style} >
       <label >
         Enter URL:
-        <input style={props.style} type={props.type} onChange={props.handleChange} />
+        <input type={props.type} autoComplete={props.autoComplete} onChange={props.handleChange} />
+        <input type="submit" value={props.buttonValue}/>
       </label>
-
-
-
     </form>
   );
 };
