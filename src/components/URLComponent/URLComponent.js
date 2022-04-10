@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LoadingElement, FieldSetElement } from "../Util/GeneralElements";
+import { LoadingElement, FormElement } from "../Util/GeneralElements";
 
 
 export default function URLComponent(props) {
@@ -15,13 +15,17 @@ export default function URLComponent(props) {
 
   }, [urlValue]);
 
-  function validateInput(event) {
+  function handleSubmit(event) {
     const stringValue = event.target.value;
-    if (stringValue.length <= 15) {
-      return;
-    }
+    // if (stringValue.length <= 15) {
+    //   return;
+    // }
+
     console.log(stringValue + " being set");
     setUrlValue(stringValue);
+    event.preventDefault();
+
+
   }
 
   // field element
@@ -33,6 +37,6 @@ export default function URLComponent(props) {
     return <LoadingElement color="red" />;
   }
   //TODO change to field element and set submit to validateInput.
-  return <FieldSetElement type="url" onChange={validateInput} />;
+  return <FormElement type="url" handleChange={handleSubmit} />;
 
 }

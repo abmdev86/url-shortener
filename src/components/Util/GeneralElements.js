@@ -14,15 +14,18 @@ export const LoadingElement = (props) => {
   );
 };
 
-export const FieldSetElement = (props) => {
+
+
+export const FormElement = (props) => {
   return (
-    <fieldset >
-      <label>
+    <form >
+      <label >
         Enter URL:
-        <input style={props.style} type={props.type} onChange={props.onChange} />
+        <input style={props.style} type={props.type} onChange={props.handleChange} />
       </label>
 
 
-    </fieldset>
+
+    </form>
   );
 };
