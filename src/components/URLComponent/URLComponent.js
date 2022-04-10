@@ -16,9 +16,10 @@ export default class URLComponent extends React.Component {
   }
 
   render() {
+    const stateUrlValue = this.state.urlValue;
     return (
       <div>
-        <p>{this.state.urlValue }</p>
+        <p>{stateUrlValue}</p>
         <URLInputComponent handleUrlChange={this.handleUrlChange} />
 
       </div>
