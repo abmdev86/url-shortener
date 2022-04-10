@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LoadingElement, FieldSetElement } from "../Util/GeneralElements";
+import { LoadingElement, FormElement } from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
 
 
@@ -60,6 +60,6 @@ export default function URLComponent(props) {
 
   }
 
-  return <FieldSetElement style={{ color: "green" }} type="text" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />;
+  return <FormElement style={{ color: "green" }} type="text" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />;
 
 }

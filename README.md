@@ -32,4 +32,8 @@ Handles users input, makes call to bitly api, displays the shorten url.
 class implementation
 ![Diagram](./public/urlClassDiagram.svg)
 
+Hook Implementation
+![Diagram](./public/urlDiagram-hook.svg)
+
+
 https://extendsclass.com/regex/1e5c02f

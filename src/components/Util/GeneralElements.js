@@ -12,7 +12,7 @@ export const LoadingElement = (props) => {
 
 
 
-export const FieldSetElement = (props) => {
+export const FormElement = (props) => {
   return (
     <form onSubmit={props.handleSubmit} style={props.style} >
       <label >
