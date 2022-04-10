@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { LoadingElement, FieldSetElement } from "../Util/GeneralElements";
+import { ValidateURL } from "../Util/RegexUtil";
 
 
 export default function URLComponent(props) {
@@ -26,20 +27,22 @@ export default function URLComponent(props) {
   // sets the urlValue state once it is over 15 characters long
   function handleChange(event) {
 
-    let stringValue = event.target.value.trim();
-    const valid = urlRegEx.exec(stringValue);
+    let stringValue = ValidateURL(event.target.value).trim();
+    setUrlValue(stringValue);
 
-    if (valid) {
-      const validURL = stringValue.match(urlRegEx);
-      stringValue = validURL[0];
-      console.log(stringValue + " being set");
+    // const valid = urlRegEx.exec(stringValue);
 
-      setUrlValue(stringValue);
-    } else {
-      console.log("not a valid url");
-      setUrlValue('');
-      return;
-    }
+    // if (valid) {
+    //   const validURL = stringValue.match(urlRegEx);
+    //   stringValue = validURL[0];
+    //   console.log(stringValue + " being set");
+
+    //   setUrlValue(stringValue);
+    // } else {
+    //   console.log("not a valid url");
+    //   setUrlValue('');
+    //   return;
+    // }
 
     event.preventDefault();
   }
