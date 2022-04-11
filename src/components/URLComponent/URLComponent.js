@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ComponentElements from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
+import APIHandler from "../Util/HandleAPI";
 
 
 export default function URLComponent(props) {
@@ -23,21 +24,24 @@ export default function URLComponent(props) {
       return;
     }
     //TODO: do something...
-    function doSomething() {
+    function shortenURL() {
 
       console.log("URLComponent: UseEffect: " + longUrlValue + " is the urlValue");
-      setShortUrl("testbit.ly");
-      // done with work so not loading.
-      setIsLoading(false);
+      APIHandler.getShortenURL_POST(longUrlValue).then(link => {
+
+        setShortUrl(link);
+        setIsLoading(false);
+      });
+
       return;
     }
 
 
     if (isLoading) {
-      console.log("going to  do something...");
+      console.log("reaching to bitly to  do shorten...");
 
       // reach bitly.
-      doSomething();
+      shortenURL();
 
     }
     console.log("URLComponent: UseEffect: Didnt hit submit.");
@@ -67,7 +71,7 @@ export default function URLComponent(props) {
 
   return (
     <div>
-      <ComponentElements.FormElement style={{ color: "green" }} type="text" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />
+      <ComponentElements.FormElement style={{ color: "green" }} type="url" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />
       <ComponentElements.DisplayElement longUrl={longUrlValue} shortUrl={shortUrl} />
     </div>
   );

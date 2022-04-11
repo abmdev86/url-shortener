@@ -5,7 +5,8 @@ import Container from './components/Container/Container';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
-var rootNode = document.getElementById('root');
+
+const rootNode = document.getElementById('root');
 
 ReactDOM.createRoot(rootNode).render(
   <React.StrictMode>
