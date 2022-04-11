@@ -1,6 +1,9 @@
 # URL Shortner
+
+
+![GIF](./public/ezgif.com-gif-maker.gif)
+---
 Shortens URLs using the bitly.com API.
-![GIF](./public/url-shortner-demo-GIF.gif)
 ### only accepts URLs as
 ```
 http://www.yourdomain.com/
@@ -36,4 +39,3 @@ Hook Implementation
 ![Diagram](./public/urlDiagram-hook.svg)
 
 
-https://extendsclass.com/regex/1e5c02f
