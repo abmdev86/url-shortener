@@ -39,3 +39,10 @@ Hook Implementation
 ![Diagram](./public/urlDiagram-hook.svg)
 
 
+## ---
+## CopyToClipboardButton Component
+Allows user to copy value provided when clicking the button
+```
+npm install --save react-copy-to-clipboard
+```
+![Diagram](./public/CopyToClipboardButton%20Component.svg)
