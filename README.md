@@ -1,6 +1,6 @@
 # URL Shortner
 Shortens URLs using the bitly.com API.
-
+![GIF](./public/url-shortner-demo-GIF.gif)
 ### only accepts URLs as
 ```
 http://www.yourdomain.com/
