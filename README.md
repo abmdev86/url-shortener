@@ -1,16 +1,16 @@
 # URL Shortner
 
 
-![GIF](./public/ezgif.com-gif-maker.gif)
+![GIF](./public/url-short-ctcb.gif)
 ---
 Shortens URLs using the bitly.com API.
-### only accepts URLs as
+### Must Provide http or https
 ```
-http://www.yourdomain.com/
+http://www.yourdomain.top-domain...
 ```
 or
 ```
-https://www.yourdomain.com/
+https://www.yourdomain.top-domain/...
 ```
 
 # DevLog
@@ -42,6 +42,7 @@ Hook Implementation
 ## ---
 ## CopyToClipboardButton Component
 Allows user to copy value provided when clicking the button
+[CopyToClipboard NPM PAGE](https://www.npmjs.com/package/copy-to-clipboard)
 ```
 npm install --save react-copy-to-clipboard
 ```
