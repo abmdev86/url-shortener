@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ComponentElements from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
 import APIHandler from "../Util/HandleAPI";
+import CopyToClipboardComponent from "../CopyToClipboard/CopyToClipboardComponent";
 
 
 export default function URLComponent(props) {
@@ -49,6 +50,9 @@ export default function URLComponent(props) {
 
   // sets the urlValue state
   function handleChange(event) {
+    if (shortUrl !== ' ') {
+      setShortUrl('');
+    }
     let stringValue = RegexObject.getValidURL(event.target.value).trim();
     setLongUrlValue(stringValue);
     event.preventDefault();
@@ -73,6 +77,7 @@ export default function URLComponent(props) {
     <div>
       <ComponentElements.FormElement style={{ color: "green" }} type="url" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />
       <ComponentElements.DisplayElement longUrl={longUrlValue} shortUrl={shortUrl} />
+      <CopyToClipboardComponent text={shortUrl} />
     </div>
   );
 
