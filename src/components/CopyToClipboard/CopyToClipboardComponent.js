@@ -2,11 +2,6 @@ import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
-const span = () => <span>Copied!</span>;
-const hiddenDiv = () => (<div hidden="true"></div>);
-const resetBtn = (props) => (<button onClick={props}>Clear</button>);
-let buttonMessage = "Copy";
-
 
 function CopyToClipboardComponent(props) {
 
