@@ -42,7 +42,7 @@ window.env = {
   "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
   "npm_package_json": "C:\\Users\\AMweb\\OneDrive\\Documents\\GitHub\\url-shortener\\package.json",
   "npm_package_name": "url-shortener",
-  "npm_package_version": "0.1.0",
+  "npm_package_version": "0.1.1",
   "NPM_PREFIX_NPM_CLI_JS": "C:\\Users\\AMweb\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js",
   "NUMBER_OF_PROCESSORS": "12",
   "OneDrive": "C:\\Users\\AMweb\\OneDrive",
