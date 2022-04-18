@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Container from './components/Container/Container';
+import AppContainer from './components/Container/Container';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 const rootNode = document.getElementById('root');
 
 ReactDOM.createRoot(rootNode).render(
   <React.StrictMode>
     <ErrorBoundary>
-      <Container />
+      <AppContainer />
     </ErrorBoundary>
 
   </React.StrictMode>
