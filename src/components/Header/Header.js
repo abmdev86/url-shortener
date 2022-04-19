@@ -1,12 +1,7 @@
-
-
-export default function Header() {
+export default function Header(props) {
   return (
-
-    <header className="App-header">
-      <div>
-        <h1>URL Shortner</h1>
-      </div>
+    <header className={props.class}>
+      <h1 className={props.titleClass}>{props.title}</h1>
     </header>
   );
 }

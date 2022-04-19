@@ -1,20 +1,26 @@
+import { Col, Container, Row } from "react-bootstrap";
 
 
 const DisplayElement = (props) => {
 
   return (
-    <div style={props.style} className={props.className}>
-      <h3>{props.longUrl}</h3>
-      <h3>{props.shortUrl}</h3>
-
-    </div>
+    <Container fluid sm="auto" md="auto" lg="auto" xl="auto" xxl="auto">
+      <Row xs="auto" sm="auto" md="auto" xl="auto" lg="auto" xxl="auto">
+        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
+          <h3 className="text-secondary">{props.longUrl}</h3>
+        </Col>
+        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
+          <h3 className="text-success">{props.shortUrl}</h3>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
  const LoadingElement = (props) => {
 
   return (
-    <h2 style={props.style}>Loading...</h2>
+    <h2 style={props.style}>{props.message}</h2>
   );
 };
 

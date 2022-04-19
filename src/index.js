@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppContainer from './components/Container/Container';
+import AppContainer from './components/Container/AppContainer';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+
 
 const rootNode = document.getElementById('root');
 
