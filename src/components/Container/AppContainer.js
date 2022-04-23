@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 
 export default function AppContainer(props) {
   return (
-    <Container className="container" fluid sm={3}>
+    <Container className="container container-sm" fluid>
       <Header title="URL Shortner" />
       <URLComponent inputType="url" buttonValue="Shorten URL" />
     </Container>
