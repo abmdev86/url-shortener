@@ -1,12 +1,11 @@
+import { Container } from "react-bootstrap";
 
-
-export default function Header() {
+export default function Header(props) {
   return (
-
-    <header className="App-header">
-      <div>
-        <h1>URL Shortner</h1>
-      </div>
-    </header>
+    <Container>
+      <header className="header ">
+        <h1>{props.title}</h1>
+      </header>
+    </Container>
   );
 }

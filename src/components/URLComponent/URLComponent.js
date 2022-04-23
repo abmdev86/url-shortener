@@ -3,33 +3,25 @@ import ComponentElements from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
 import APIHandler from "../Util/HandleAPI";
 import CopyToClipboardComponent from "../CopyToClipboard/CopyToClipboardComponent";
-
+import Container from "react-bootstrap/Container";
 
 export default function URLComponent(props) {
-
-  const [longUrlValue, setLongUrlValue] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
+  const [longUrlValue, setLongUrlValue] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    console.log('initialize...');
-
-  }, []);
-
-
 
   // urlValue
   useEffect(() => {
-    if (longUrlValue === '') {
-      console.log("url is blank...");
+    if (longUrlValue === "") {
+      //console.log("url is blank...");
       return;
     }
-    //TODO: do something...
+
     function shortenURL() {
-
-      console.log("URLComponent: UseEffect: " + longUrlValue + " is the urlValue");
-      APIHandler.getShortenURL_POST(longUrlValue).then(link => {
-
+      console.log(
+        "URLComponent: UseEffect: " + longUrlValue + " is the urlValue"
+      );
+      APIHandler.getShortenURL_POST(longUrlValue).then((link) => {
         setShortUrl(link);
         setIsLoading(false);
       });
@@ -37,48 +29,44 @@ export default function URLComponent(props) {
       return;
     }
 
-
     if (isLoading) {
-      console.log("reaching to bitly to  do shorten...");
-
-      // reach bitly.
+      // is loading sets running call to API
       shortenURL();
-
     }
-    console.log("URLComponent: UseEffect: Didnt hit submit.");
   }, [longUrlValue, isLoading, shortUrl]);
 
   // sets the urlValue state
   function handleChange(event) {
-    if (shortUrl !== ' ') {
-      setShortUrl('');
+    if (shortUrl !== " ") {
+      setShortUrl("");
     }
     let stringValue = RegexObject.getValidURL(event.target.value).trim();
     setLongUrlValue(stringValue);
     event.preventDefault();
   }
 
-
   function handleSubmit(e) {
-    // TODO: cache entry to store for recalling later
-    //set loading to true to allow useEffect to run the call to server.
     setIsLoading(true);
     e.preventDefault();
   }
 
-
   if (isLoading) {
-
-    return <ComponentElements.LoadingElement color="red" />;
-
+    return (
+      <ComponentElements.LoadingElement color="red" message="Loading..." />
+    );
   }
 
   return (
-    <div>
-      <ComponentElements.FormElement style={{ color: "green" }} type="url" handleChange={handleChange} handleSubmit={handleSubmit} buttonValue="Shorten URL" />
-      <ComponentElements.DisplayElement longUrl={longUrlValue} shortUrl={shortUrl} />
+    <Container fluid>
+      <ComponentElements.DisplayElement
+        longUrl={longUrlValue}
+        shortUrl={shortUrl}
+        type={props.inputType}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        buttonValue={props.buttonValue}
+      />
       <CopyToClipboardComponent text={shortUrl} />
-    </div>
+    </Container>
   );
-
 }

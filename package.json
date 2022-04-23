@@ -1,13 +1,15 @@
 {
   "name": "url-shortener",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Auroiah Morgan",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.1.3",
     "react": "^18.0.0",
+    "react-bootstrap": "^2.2.3",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^18.0.0",
     "react-dotenv": "^0.1.3",
