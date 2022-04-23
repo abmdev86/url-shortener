@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function CopyToClipboardComponent(props) {
