@@ -13,18 +13,14 @@ function CopyToClipboardComponent(props) {
   if (!isCopied && props.text) {
     return (
       <Container fluid>
-        <Row xs="auto" sm="auto" md="auto" xl="auto" lg="auto" xxl="auto">
-          <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
-            <CopyToClipboard
-              text={props.text}
-              onCopy={() => copy()}
-              options={{ debug: props.debug, message: "" }}
-              style={props.style}
-            >
-              <Button variant="info">Copy</Button>
-            </CopyToClipboard>
-          </Col>
-        </Row>
+        <CopyToClipboard
+          text={props.text}
+          onCopy={() => copy()}
+          options={{ debug: props.debug, message: "" }}
+          style={props.style}
+        >
+          <Button variant="info">Copy</Button>
+        </CopyToClipboard>
       </Container>
     );
   } else if (isCopied && props.text) {
@@ -33,16 +29,12 @@ function CopyToClipboardComponent(props) {
     setIsCopied(false);
     return (
       <Container fluid>
-        <Row xs="auto" sm="auto" md="auto" xl="auto" lg="auto" xxl="auto">
-          <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
-            <CopyToClipboard
-              text={props.text}
-              onCopy={() => copy()}
-              options={{ debug: props.debug, message: "" }}
-              style={props.style}
-            ></CopyToClipboard>
-          </Col>
-        </Row>
+        <CopyToClipboard
+          text={props.text}
+          onCopy={() => copy()}
+          options={{ debug: props.debug, message: "" }}
+          style={props.style}
+        ></CopyToClipboard>
       </Container>
     );
   }
