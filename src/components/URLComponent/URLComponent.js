@@ -61,9 +61,9 @@ export default function URLComponent(props) {
   }
 
   return (
-    <Container fluid sm="auto" md="auto" lg="auto" xl="auto" xxl="auto">
-      <Row xs="auto" sm="auto" md="auto" xl="auto" lg="auto" xxl="auto">
-        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
+    <Container fluid>
+      <Row >
+        <Col>
           <ComponentElements.FormElement
             type={props.inputType}
             handleChange={handleChange}
