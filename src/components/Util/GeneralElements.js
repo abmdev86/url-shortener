@@ -1,40 +1,68 @@
-
+import { Col, Container, Form, Row } from "react-bootstrap";
 
 const DisplayElement = (props) => {
-
   return (
-    <div style={props.style} className={props.className}>
-      <h3>{props.longUrl}</h3>
-      <h3>{props.shortUrl}</h3>
+    <Container fluid>
+      <FormElement
+        type={props.inputType}
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
+        buttonValue={props.buttonValue}
+      />
+      <Row className="row">
+        <Col>
+          <h3>{props.longUrl}</h3>
+        </Col>
+      </Row>
 
-    </div>
-  );
-}
-
- const LoadingElement = (props) => {
-
-  return (
-    <h2 style={props.style}>Loading...</h2>
+      <Row className="row">
+        <h3>{props.shortUrl}</h3>
+      </Row>
+    </Container>
   );
 };
 
+const LoadingElement = (props) => {
+  return <h2 style={props.style}>{props.message}</h2>;
+};
 
-
- const FormElement = (props) => {
+const FormElement = (props) => {
   return (
-    <form onSubmit={props.handleSubmit} style={props.style} >
-      <label >
-        Enter URL:
-        <input type={props.type} autoComplete={props.autoComplete} onChange={props.handleChange} />
-        <input type="submit" value={props.buttonValue}/>
-      </label>
-    </form>
+    <>
+      <style>
+        {`
+            .form-group-flat{
+              bacgroud-color: purple;
+              color: white
+               display: flex;
+    align-items: center;
+    justify-content: center;  
+            }
+          `}
+      </style>
+
+      <Form onSubmit={props.handleSubmit} style={props.style}>
+        <Form.Group variant="flat" className="mb-2">
+          <Form.Label htmlFor="url-input">Enter URL:</Form.Label>
+          <Form.Control
+            name="url-input"
+            type={props.type}
+            autoComplete={props.autoComplete}
+            onChange={props.handleChange}
+            placeholder="https://www.example.com"
+          />
+        </Form.Group>
+        <Form.Group className="mb-2">
+          <Form.Control type="submit" value={props.buttonValue} />
+        </Form.Group>
+      </Form>
+    </>
   );
 };
 
 const ComponentElements = {
   LoadingElement,
   FormElement,
-  DisplayElement
+  DisplayElement,
 };
 export default ComponentElements;
