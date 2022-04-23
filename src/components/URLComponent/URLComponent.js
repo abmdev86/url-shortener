@@ -3,7 +3,7 @@ import ComponentElements from "../Util/GeneralElements";
 import RegexObject from "../Util/RegexUtil";
 import APIHandler from "../Util/HandleAPI";
 import CopyToClipboardComponent from "../CopyToClipboard/CopyToClipboardComponent";
-import { Col, Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
 export default function URLComponent(props) {
   const [longUrlValue, setLongUrlValue] = useState("");
@@ -57,28 +57,22 @@ export default function URLComponent(props) {
   }
 
   if (isLoading) {
-    return <ComponentElements.LoadingElement color="red" message="Loading..." />;
+    return (
+      <ComponentElements.LoadingElement color="red" message="Loading..." />
+    );
   }
 
   return (
     <Container fluid>
-      <Row >
-        <Col>
-          <ComponentElements.FormElement
-            type={props.inputType}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            buttonValue={props.buttonValue}
-          />
-        </Col>  
-        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
-          <ComponentElements.DisplayElement
-            longUrl={longUrlValue}
-            shortUrl={shortUrl}
-          />
-          <CopyToClipboardComponent text={shortUrl} />
-        </Col>
-      </Row>
+      <ComponentElements.DisplayElement
+        longUrl={longUrlValue}
+        shortUrl={shortUrl}
+        type={props.inputType}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        buttonValue={props.buttonValue}
+      />
+      <CopyToClipboardComponent text={shortUrl} />
     </Container>
   );
 }

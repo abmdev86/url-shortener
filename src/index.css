@@ -25,7 +25,9 @@ code {
 .container{
   margin: 0;
 }
-
+.row{
+  padding: 1em;
+}
 @media(min-width: 900px){
   .container {
     margin: auto;

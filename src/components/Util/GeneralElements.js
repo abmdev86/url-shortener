@@ -2,14 +2,21 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 
 const DisplayElement = (props) => {
   return (
-    <Container fluid sm="auto" md="auto" lg="auto" xl="auto" xxl="auto">
-      <Row xs="auto" sm="auto" md="auto" xl="auto" lg="auto" xxl="auto">
-        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
-          <h3 className="text-secondary">{props.longUrl}</h3>
+    <Container fluid>
+      <FormElement
+        type={props.inputType}
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
+        buttonValue={props.buttonValue}
+      />
+      <Row className="row">
+        <Col>
+          <h3>{props.longUrl}</h3>
         </Col>
-        <Col xs="auto" xxl="auto" xl="auto" sm="auto" md="auto" lg="auto">
-          <h3 className="text-success">{props.shortUrl}</h3>
-        </Col>
+      </Row>
+
+      <Row className="row">
+        <h3>{props.shortUrl}</h3>
       </Row>
     </Container>
   );
