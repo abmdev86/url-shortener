@@ -4,6 +4,12 @@
 
 Shortens URLs using the bitly.com API.
 
+# Updates
+
+---
+
+v1.1 - updates styles and colors
+
 ### Must Provide http or https
 
 ```
