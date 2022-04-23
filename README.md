@@ -2,6 +2,8 @@
 
 ## ![GIF](./public/url-launcher-gif-v1.1.gif)
 
+## [LAUNCH](https://auroiah-web-apps.web.app)
+
 Shortens URLs using the bitly.com API.
 
 # Updates
