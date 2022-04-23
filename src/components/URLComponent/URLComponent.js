@@ -10,10 +10,6 @@ export default function URLComponent(props) {
   const [shortUrl, setShortUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    //  console.log('initialize...');
-  }, []);
-
   // urlValue
   useEffect(() => {
     if (longUrlValue === "") {
@@ -34,11 +30,9 @@ export default function URLComponent(props) {
     }
 
     if (isLoading) {
-      //console.log("reaching to bitly to  do shorten...");
+      // is loading sets running call to API
       shortenURL();
     }
-
-    //console.log("URLComponent: UseEffect: Didnt hit submit.");
   }, [longUrlValue, isLoading, shortUrl]);
 
   // sets the urlValue state
