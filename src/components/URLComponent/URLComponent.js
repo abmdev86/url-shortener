@@ -21,6 +21,7 @@ export default function URLComponent(props) {
       console.log(
         "URLComponent: UseEffect: " + longUrlValue + " is the urlValue"
       );
+
       APIHandler.getShortenURL_POST(longUrlValue).then((link) => {
         setShortUrl(link);
         setIsLoading(false);
