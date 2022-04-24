@@ -1,7 +1,4 @@
 import env from "react-dotenv";
-import { logger } from "./LoggerUtil";
-const BASE64 = require("base-64");
-const UTF8 = require("utf8");
 
 export default function AuthorizeUser(username, password, isLive = true) {
   const autGranthHeaders = new Headers();
