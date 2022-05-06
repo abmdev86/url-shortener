@@ -6,18 +6,33 @@ import { Col, Row } from "react-bootstrap";
 import User from "../User/User.js";
 import { useEffect, useState } from "react";
 import Login from "../User/Login.js";
+import { logger } from "../Util/LoggerUtil.js";
+import { saltPw } from "../Util/Utilities.js";
 
 export default function AppContainer() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userPW, setUserPW] = useState("");
 
   useEffect(() => {
     if (loggedIn) return;
-    console.log(loggedIn);
   }, [loggedIn]);
+  useEffect(() => {
+    const hash = saltPw(userPW);
+    setUserPW(hash);
+  }, [userPW]);
 
   function toggleLogin(e) {
     let isLoggedIn = !loggedIn;
-    console.log(isLoggedIn);
+    let userEmail = e.target.email.value || userName;
+    let userPassword = "";
+    // hash pw from e.target.password.value
+    console.log(userEmail);
+    console.log(userPassword);
+    //set email and password
+
+    //set login to true
+    logger(isLoggedIn);
     setLoggedIn(isLoggedIn);
     e.preventDefault();
   }
@@ -31,7 +46,7 @@ export default function AppContainer() {
           {!loggedIn ? (
             <Login authUser={toggleLogin} />
           ) : (
-            <User toggleLogin={toggleLogin} />
+            <User toggleUserLogin={toggleLogin} />
           )}
         </Col>
 

@@ -13,6 +13,8 @@ window.env = {
   "CommonProgramW6432": "C:\\Program Files\\Common Files",
   "COMPUTERNAME": "AUROIAH-G7",
   "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+  "DEV_PASS": "S@xAF0n317",
+  "DEV_USER": "auroiah.morgan@gmail.com",
   "dp0": "C:\\Users\\AMweb\\OneDrive\\Documents\\GitHub\\url-shortener\\node_modules\\.bin\\",
   "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
   "EDITOR": "notepad.exe",

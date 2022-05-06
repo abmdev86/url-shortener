@@ -7,7 +7,7 @@ export default function User(props) {
 
   return (
     <Container>
-        <Button variant="danger" onClick={props.toggleLogin}>Logout</Button>
+        <Button variant="danger" onClick={props.toggleUserLogin}>Logout</Button>
       <UserElement token={props.token} />
     </Container>
   );
